@@ -1,0 +1,274 @@
+/* admin.css */
+/* Paleta de colores */
+:root{
+    --azul: #10214b;
+    --arena: #d7bd88;
+    --beige: #d0c3ba;
+    --crema: #ebe7e1;
+
+    --texto-principal: #0f1724;
+    --radio: 10px;
+    --easing: cubic-bezier(.2,.9,.3,1);
+}
+
+/* Estilos globales (compatibles con Bootstrap) */
+body {
+    background: linear-gradient(180deg, var(--crema) 0%, #fbf9f7 100%);
+    color: var(--texto-principal);
+    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Encabezado del admin */
+.admin-header{
+    background: linear-gradient(90deg, rgba(16,33,75,1) 0%, rgba(16,33,75,0.95) 100%);
+    color: var(--crema);
+    padding: 1.25rem 0.75rem;
+    box-shadow: 0 6px 20px rgba(16,33,75,0.10);
+    margin-bottom: 1.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.admin-header h1{
+    margin: 0 0 0.25rem 0;
+    font-size: 1.5rem;
+    letter-spacing: -0.3px;
+}
+.admin-header p{
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Botón cerrar sesión (estilo leve) */
+.admin-header .btn-light {
+    background: rgba(255,255,255,0.12);
+    color: var(--crema);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
+    border-radius: 8px;
+    padding: 0.45rem 0.7rem;
+    transition: transform 160ms var(--easing), background 160ms var(--easing);
+}
+.admin-header .btn-light:hover,
+.admin-header .btn-light:focus {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.16);
+    color: var(--crema);
+}
+
+/* Sobrescribir paleta para clases bg-* usadas en HTML */
+.bg-primary {
+    background-color: var(--azul) !important;
+    color: var(--crema) !important;
+    border-color: transparent !important;
+}
+.bg-info {
+    background-color: linear-gradient(180deg, rgba(209,195,186,1), rgba(208,195,186,1)) !important;
+    /* Usamos arena/beige para tarjetas informativas — ajustar texto en regla siguiente */
+    background-color: var(--beige) !important;
+    color: var(--texto-principal) !important;
+}
+.bg-danger {
+    /* Para mantener contraste usamos una versión cálida del rojo basada en la paleta */
+    background: linear-gradient(180deg, #b02a2a, #8b1f1f) !important;
+    color: #fff !important;
+}
+.bg-warning {
+    background-color: var(--arena) !important;
+    color: var(--azul) !important;
+}
+
+/* Cards */
+.card {
+    border-radius: var(--radio);
+    border: 1px solid rgba(16,33,75,0.06);
+    box-shadow: 0 8px 28px rgba(16,33,75,0.06);
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff, #fbfbfb);
+}
+.card-header {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Formularios */
+.form-label {
+    font-weight: 600;
+    color: rgba(16,33,75,0.9);
+}
+.form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(16,33,75,0.10);
+    padding: 0.6rem 0.75rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: border-color 160ms var(--easing), box-shadow 160ms var(--easing);
+}
+.form-control:focus {
+    border-color: var(--azul);
+    box-shadow: 0 8px 20px rgba(16,33,75,0.06);
+    outline: none;
+}
+
+/* Botones principales */
+.btn-primary {
+    background: linear-gradient(180deg, var(--azul) 0%, #0b1836 100%);
+    color: var(--crema);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(16,33,75,0.12);
+    transition: transform 140ms var(--easing);
+}
+.btn-primary:hover, .btn-primary:focus {
+    transform: translateY(-3px);
+    filter: brightness(1.03);
+}
+
+/* Botón secundario (danger pequeño) */
+.btn-danger {
+    background: linear-gradient(180deg, #c93b3b, #8b1f1f);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+.btn-warning {
+    background: var(--arena);
+    color: var(--azul);
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Preview de imagen */
+.preview-image{
+    max-width: 220px;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(16,33,75,0.06);
+    box-shadow: 0 8px 18px rgba(16,33,75,0.06);
+    background: #fff;
+    padding: 6px;
+}
+
+/* Lista de medicamentos: tarjetas en grid */
+#listaMedicamentos .med-card {
+    transition: transform 200ms var(--easing), box-shadow 200ms var(--easing);
+    border-radius: 12px;
+    overflow: hidden;
+}
+#listaMedicamentos .med-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(16,33,75,0.07);
+}
+.med-card .med-body {
+    padding: 1rem;
+}
+
+/* Encabezados de sección */
+h4 {
+    color: var(--azul);
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+/* Tabs (nav-tabs) estilo personalizado */
+.nav-tabs .nav-link {
+    color: rgba(16,33,75,0.8);
+    border: 1px solid rgba(16,33,75,0.06);
+    border-bottom: none;
+    background: linear-gradient(180deg,#fff,#fcfcfc);
+    border-radius: 10px 10px 0 0;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    font-weight: 700;
+    transition: transform 140ms var(--easing), box-shadow 140ms var(--easing);
+}
+.nav-tabs .nav-link.active {
+    background: linear-gradient(180deg, var(--crema), #f7f5f2);
+    color: var(--azul);
+    box-shadow: 0 8px 22px rgba(16,33,75,0.06);
+}
+
+/* Carteles de mensaje (mensaje, mensajeModal) */
+#mensaje, #mensajeModal {
+    min-height: 1.4rem;
+    font-weight: 600;
+    color: var(--azul);
+}
+
+/* Secciones de vencimientos: tarjetas dentro */
+#medicamentosVencidos .list-item,
+#medicamentosPorVencer .list-item {
+    padding: 0.65rem;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(180deg, #fff, #faf9f8);
+    border: 1px solid rgba(16,33,75,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.vencido {
+    color: #8b1f1f;
+    font-weight: 700;
+}
+.por-vencer {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+/* Modal: personalizaciones para encajar con paleta */
+.modal-header {
+    border-bottom: none;
+    align-items: center;
+}
+.modal-header.bg-warning {
+    background: var(--arena) !important;
+    color: var(--azul) !important;
+}
+.modal-header .btn-close {
+    filter: invert(1) brightness(2);
+}
+
+/* Responsive helpers */
+@media (max-width: 767px) {
+    .admin-header h1 {
+        font-size: 1.1rem;
+    }
+    .admin-header .btn-light {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    .preview-image {
+        max-width: 160px;
+        max-height: 120px;
+    }
+    .nav-tabs .nav-link {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.92rem;
+    }
+}
+
+/* Accesibilidad: foco claro y visible */
+:focus {
+    outline: 3px solid rgba(215,189,136,0.16);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* Pequeño ajuste para evitar que los headers de tarjeta pierdan contraste en texto claro */
+.card-header.bg-primary,
+.card-header.bg-danger {
+    color: #fff !important;
+}
+
+/* Utilidad: bordes suaves alrededor de inputs file para que se vea más integrado */
+input[type="file"].form-control {
+    padding: 0.45rem 0.6rem;
+    background: linear-gradient(180deg, #fff, #fafafa);
+}

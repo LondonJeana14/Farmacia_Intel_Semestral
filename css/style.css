@@ -1,0 +1,114 @@
+/*index*/
+:root {
+    --azul: #10214b;
+    --arena: #d7bd88;
+    --beige: #d0c3ba;
+    --crema: #ebe7e1;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--azul);
+}
+
+#contenedor {
+    width: 90%;
+    margin: 0 auto;
+    background: var(--crema);
+}
+
+/* HEADER */
+#header {
+    background-color: var(--azul);
+    color: var(--arena);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--arena);
+}
+
+#header .lead {
+    font-size: 1.1rem;
+    color: var(--beige);
+}
+
+/* NAVBAR */
+#navbar {
+    background-color: var(--arena);
+    padding: 10px 0;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+#navbar a {
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: bold;
+    transition: color 200ms var(--easing);
+
+}
+#navbar ul li a:hover {
+    text-decoration: underline;   
+}
+#navbar a:hover {
+    color: var(--crema);
+
+}
+
+/* MAIN */
+#main {
+    padding: 20px;
+    background: var(--crema);
+}
+
+#showcase {
+    background-color: var(--beige);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-left: 5px solid var(--azul);
+    border-right: 5px solid var(--azul);
+    color: var(--azul);
+}
+
+#contenido-destacado h1 {
+    color: var(--azul);
+}
+
+.seccion-med {
+    background-color: var(--crema);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Recuadros bonitos para imÃ¡genes */
+.img-box {
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--arena); /* color de tu paleta */
+    margin: 10px auto;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-box img {
+    width: 75%;
+    height: 75%;
+    object-fit: cover;  /* hace que la imagen quede recortada y bonita */
+}

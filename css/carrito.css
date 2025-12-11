@@ -1,0 +1,271 @@
+/* carrito.css */
+/* Paleta de colores */
+:root {
+    --azul: #10214b;
+    --arena: #d7bd88;
+    --beige: #d0c3ba;
+    --crema: #ebe7e1;
+
+    --texto-principal: #0f1724;
+    --radio: 10px;
+    --easing: cubic-bezier(.2,.9,.3,1);
+}
+
+/* NAVBAR */
+#navbar {
+    background-color: var(--arena);
+    padding: 10px 0;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+#navbar a {
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: bold;
+    transition: color 200ms var(--easing);
+
+}
+#navbar ul li a:hover {
+    text-decoration: underline;   
+}
+#navbar a:hover {
+    color: var(--crema);
+
+}
+
+/* Reset ligero */
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg, var(--crema) 0%, #fbf9f7 100%);
+    color: var(--texto-principal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 3.5rem; /* espacio para botones fijos si hay */
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, var(--azul) 0%, rgba(16,33,75,0.95) 100%);
+    color: var(--crema);
+    padding: 1rem 1.25rem;
+    box-shadow: 0 8px 28px rgba(16,33,75,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Botón regresar */
+.btn-regresar {
+    margin: 1rem;
+    background: var(--arena);
+    color: var(--azul);
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(16,33,75,0.06);
+    transition: transform 140ms var(--easing);
+    box-shadow: 140ms var(--easing);
+}
+.btn-regresar:hover,
+.btn-regresar:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(16,33,75,0.08);
+    outline: none;
+}
+
+/* Contenedor principal */
+.cart-container {
+    max-width: 1100px;
+    margin: 1.25rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.25rem;
+}
+
+/* Tabla del carrito */
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(180deg, #fff, #fbfbfb);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(16,33,75,0.04);
+}
+#cart-table thead {
+    background: linear-gradient(180deg, var(--beige), #e9e0d7);
+}
+#cart-table thead th {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    font-weight: 800;
+    color: var(--azul);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(16,33,75,0.04);
+}
+#cart-table tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(16,33,75,0.04);
+    vertical-align: middle;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+}
+#cart-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Columna medicamento: imagen + nombre */
+.item-info {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+.item-info img {
+    width: 64px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid rgba(16,33,75,0.04);
+    padding: 6px;
+}
+
+/* Inputs cantidad */
+.cantidad-input {
+    width: 84px;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(16,33,75,0.08);
+    text-align: center;
+}
+
+/* Botones acción en tabla */
+.btn-eliminar {
+    background: linear-gradient(180deg, #c93b3b, #8b1f1f);
+    color: #fff;
+    border: none;
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-eliminar:hover,
+.btn-eliminar:focus { transform: translateY(-2px); outline: none; }
+
+/* Caja del total y pagar */
+.total-box {
+    background: linear-gradient(180deg, #fff, #fcfbfa);
+    border-radius: 12px;
+    padding: 1.15rem;
+    border: 1px solid rgba(16,33,75,0.04);
+    box-shadow: 0 12px 30px rgba(16,33,75,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: stretch;
+    height: fit-content;
+}
+.total-box h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--azul);
+    font-weight: 800;
+    text-align: center;
+}
+#btn-pagar {
+    background: linear-gradient(180deg, var(--azul), #0b1836);
+    color: var(--crema);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(16,33,75,0.10);
+    transition: transform 140ms var(--easing), filter 140ms var(--easing);
+}
+#btn-pagar:hover,
+#btn-pagar:focus { transform: translateY(-3px); filter: brightness(1.03); outline: none; }
+
+/* FACTURA */
+.factura {
+    max-width: 1100px;
+    margin: 1.25rem auto;
+    padding: 1rem;
+    background: linear-gradient(180deg, #fff, #fbfbfb);
+    border-radius: 12px;
+    border: 1px solid rgba(16,33,75,0.04);
+    box-shadow: 0 8px 24px rgba(16,33,75,0.06);
+}
+.factura h2 {
+    margin-top: 0;
+    color: var(--azul);
+}
+
+/* Mensaje cuando carrito vacío */
+#cart-body .vacio {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(16,33,75,0.7);
+    font-weight: 700;
+}
+
+/* Pequeños ajustes visuales */
+th, td { transition: background 120ms var(--easing); }
+
+/* Responsive: convertir tabla en bloques en pantallas pequeñas */
+@media (max-width: 880px) {
+    .cart-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.8rem;
+    }
+    #cart-table thead { display: none; }
+    #cart-table, #cart-table tbody, #cart-table tr, #cart-table td {
+        display: block;
+        width: 100%;
+    }
+    #cart-table tr {
+        margin-bottom: 0.9rem;
+        background: linear-gradient(180deg,#fff,#fbfbfb);
+        border-radius: 10px;
+        padding: 0.6rem;
+        box-shadow: 0 8px 18px rgba(16,33,75,0.04);
+    }
+    #cart-table td {
+        padding: 0.5rem 0.6rem;
+        border: none;
+    }
+    #cart-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 800;
+        color: var(--azul);
+        margin-bottom: 0.25rem;
+    }
+    .item-info img { width: 84px; height: 68px; }
+}
+
+/* Accesibilidad: foco visible */
+:focus {
+    outline: 3px solid rgba(215,189,136,0.16);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
