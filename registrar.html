@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Crear Cuenta</h1>
+                        
+                        <div id="mensaje" class="mb-3"></div>
+                        
+                        <form id="formRegistro" onsubmit="registrar(event)">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="nombre">Nombre *</label>
+                                    <input type="text" id="nombre" class="form-control" placeholder="Juan" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="apellido">Apellido *</label>
+                                    <input type="text" id="apellido" class="form-control" placeholder="Pérez" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label" for="correo">Correo Electrónico *</label>
+                                <input type="email" id="correo" class="form-control" placeholder="ejemplo@correo.com" required>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="contrasena">Contraseña *</label>
+                                    <input type="password" id="contrasena" class="form-control" placeholder="••••••••" minlength="6" required>
+                                    <small class="text-muted">Mínimo 6 caracteres</small>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="confirmarContrasena">Confirmar Contraseña *</label>
+                                    <input type="password" id="confirmarContrasena" class="form-control" placeholder="••••••••" minlength="6" required>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary" id="btnRegistrar">
+                                    Registrarse
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <small class="text-muted">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <audio controls autoplay loop hidden>
+                <source src="audio/「🌙 Relaxing night ambience & music🌙」  ♡Kagome & Inuyasha go on a peaceful bike ride together♡ - melusinebb.mp3" type="audio/mpeg">
+            </audio>
+
+             <footer id="footer">
+        <p>&copy; 2025 Farmacia La Felicidad</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/soluciones.js"></script>
+</body>
+</html>

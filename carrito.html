@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | Farmacia</title>
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+    <header>
+        <h1>Carrito de Compras - Farmacia la Felicidad</h1>
+    </header>
+
+     <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+               
+               
+            </ul>
+        </nav>
+    <button class="btn-regresar" onclick="location.href='cliente.html'">
+    Regresar
+   </button>
+
+    <section class="cart-container">
+
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Medicamento</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body">
+                <!-- Se llena dinámicamente desde carrito.js -->
+            </tbody>
+        </table>
+
+        <div class="total-box">
+            <h2>Total: $<span id="total">0.00</span></h2>
+            <button id="btn-pagar">Pagar</button>
+        </div>
+
+    </section>
+
+ 
+
+
+    <!-- FACTURA -->
+    <section class="factura" id="factura" style="display:none;">
+        <h2>Factura</h2>
+        <p><strong>Cliente:</strong> <span id="factura-nombre"></span></p>
+        <p><strong>Total Pagado:</strong> $<span id="factura-total"></span></p>
+        <p><strong>Estado:</strong> Pagado ✓</p>
+    </section>
+
+     <footer id="footer">
+        <p>&copy; 2025 Farmacia La Felicidad</p>
+    </footer>
+    
+ <audio controls autoplay loop hidden>
+                <source src="audio/「🌙 Relaxing night ambience & music🌙」  ♡Kagome & Inuyasha go on a peaceful bike ride together♡ - melusinebb.mp3" type="audio/mpeg">
+            </audio>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
